@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selected Works | FARSEEN</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/thread-art.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Override specific styles for gallery page */
+        body {
+            overflow: hidden;
+        }
+
+        /* Fully immersive */
+        .gallery-page-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+            color: #fff;
+            text-decoration: none;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            mix-blend-mode: difference;
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+
+    <div class="page-transition-overlay"></div>
+
+    <a href="index.html" class="back-btn" id="backBtn">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+    <div class="gallery-page-container">
+        <!-- Reusing the Grid Logic -->
+        <div class="works-grid" id="fullGalleryGrid">
+            <!-- JS will inject items here -->
+        </div>
+    </div>
+
+    <!-- GSAP & Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Gallery Grid Logic (Reused inline for simplicity or imported)
+        const grid = document.getElementById('fullGalleryGrid');
+        const assetPath = 'assets/WORKS/';
+        const workImages = [
+            'Metal-Box-Mockup-Dark.jpg',
+            'Free PSD Craft Paper Gift Box Mockup.jpg',
+            'Rounded-Business-Card-Mockup.jpg',
+            'qr-code-restaurant-menu2.jpg',
+            'PaperBag_180x220x80_Mockup_1.jpg',
+            'P8EEP31.jpg'
+        ];
+
+        // Populate Grid
+        for (let i = 0; i < 60; i++) {
+            const item = document.createElement('div');
+            item.className = 'works-grid-item';
+            const img = document.createElement('img');
+            img.src = assetPath + workImages[i % workImages.length];
+            item.appendChild(img);
+            grid.appendChild(item);
+        }
+
+        // Fisheye Effect
+        grid.addEventListener('mousemove', (e) => {
+            const items = document.querySelectorAll('.works-grid-item');
+            items.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const dist = Math.hypot(e.clientX - cx, e.clientY - cy);
+
+                if (dist < 300) {
+                    const scale = 1 + (0.8 * (1 - dist / 300));
+                    item.style.transform = `scale(${scale})`;
+                    item.style.zIndex = 10;
+                    item.style.filter = 'brightness(1)';
+                } else {
+                    item.style.transform = 'scale(1)';
+                    item.style.zIndex = 1;
+                    item.style.filter = 'brightness(0.6)';
+                }
+            });
+        });
+
+        grid.addEventListener('mouseleave', () => {
+            document.querySelectorAll('.works-grid-item').forEach(item => {
+                item.style.transform = 'scale(1)';
+                item.style.zIndex = 1;
+                item.style.filter = 'brightness(0.6)';
+            });
+        });
+
+        // Entrance Animation (Slide Right Reveal)
+        const overlay = document.querySelector('.page-transition-overlay');
+        // Already assumed overlay is white/accent covering screen
+        // Animate it AWAY to the right
+        gsap.to(overlay, {
+            x: '100%',
+            duration: 0.8,
+            ease: 'power2.inOut',
+            delay: 0.2
+        });
+
+        // Back Transition
+        document.getElementById('backBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = e.currentTarget.getAttribute('href');
+
+            // Slide Overlay IN from Left
+            gsap.fromTo(overlay,
+                { x: '-100%' },
+                { x: '0%', duration: 0.8, ease: 'power2.inOut', onComplete: () => window.location.href = target }
+            );
+        });
+
+    </script>
+</body>
+
+</html>

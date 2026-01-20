@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farseen P T | Digital Visual Designer</title>
+    <meta name="description"
+        content="Portfolio of Farseen P T - Senior Digital Marketing Consultant, Graphic Designer, and Video Editor.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Manrope:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP & Lenis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/thread-art.css">
+</head>
+
+<body class="loading">
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="counter">0%</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container fluid">
+            <a href="#" class="logo">FARSEEN<span class="dot">.</span></a>
+            <div class="nav-right">
+                <span class="time-display" id="timeDisplay">00:00</span>
+                <div class="menu-btn">
+                    <span>MENU</span>
+                </div>
+            </div>
+        </div>
+        <div class="menu-overlay">
+            <div class="menu-close">CLOSE</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="menu-link">Home <span class="num">01</span></a></li>
+                <li><a href="#profile" class="menu-link">Profile <span class="num">02</span></a></li>
+                <li><a href="#expertise" class="menu-link">Expertise <span class="num">03</span></a></li>
+                <li><a href="#works" class="menu-link">Selected Works <span class="num">04</span></a></li>
+                <li><a href="#contact" class="menu-link">Contact <span class="num">05</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container fluid hero-flex-container">
+
+                <!-- Left: Text -->
+                <div class="hero-col-text">
+                    <h1 class="hero-title">
+                        <div class="line"><span>Digital</span></div>
+                        <div class="line"><span>Visual</span></div>
+                        <div class="line"><span>Designer</span></div>
+                    </h1>
+                    <div class="hero-buttons">
+                        <a href="https://drive.google.com/file/d/1_VCz7_LQYvduIHFJjwPngkpmnIW06tcq/view" target="_blank"
+                            class="btn-main hero-btn">
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Image -->
+                <div class="hero-col-img">
+                    <img src="assets/New%20folder/1-1.png" alt="Farseen P T">
+                </div>
+
+                <div class="hero-footer">
+                    <div class="location">Based in Kerala, India</div>
+                    <div class="scroll-label">Scroll to Explore</div>
+                </div>
+            </div>
+            <div class="hero-bg-overlay"></div>
+        </section>
+
+        <!-- Profile / About Section -->
+        <section id="profile" class="about-section" data-bgcolor="#0a0a0a">
+            <div class="container">
+                <div class="about-header">
+                    <span class="section-label">02 — Profile</span>
+                </div>
+
+                <div class="about-content">
+                    <p class="lead-statement reveal-text">
+                        I craft <span class="highlight">digital experiences</span> with a focus on motion, aesthetic,
+                        and purpose.
+                        As a distinct creative, I blend <span class="highlight">technical precision</span> with artistic
+                        vision.
+                    </p>
+
+                    <div class="about-grid">
+                        <div class="about-col">
+                            <h3 class="col-title">Philosophy</h3>
+                            <p class="col-text">
+                                True potential is unlocked through collaboration. I value platforms that encourage
+                                questioning, iteration, and the fearless tracking of new ideas.
+                            </p>
+                        </div>
+                        <div class="about-col">
+                            <h3 class="col-title">Experience</h3>
+                            <p class="col-text">
+                                Senior Digital Marketing Consultant & Visual Designer with over 6 years of industry
+                                experience, creating high-fidelity assets for top global brands.
+                            </p>
+                            <a href="#" class="text-link">View Resume <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Stats Section -->
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-top">Industry Experience</span>
+                            <h2 class="stat-num">6+</h2>
+                            <span class="stat-bottom">Years</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-top">Associate with</span>
+                            <h2 class="stat-num">20+</h2>
+                            <span class="stat-bottom">Companies</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-top">Completed</span>
+                            <h2 class="stat-num">1000+</h2>
+                            <span class="stat-bottom">Works</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase Section -->
+        <section id="showcase" class="showcase-section">
+            <div class="showcase-bg">
+                <img src="assets/WORKS/Free%20PSD%20Craft%20Paper%20Gift%20Box%20Mockup.jpg" class="showcase-img active"
+                    alt="Work">
+                <img src="assets/WORKS/Metal-Box-Mockup-Dark.jpg" class="showcase-img" alt="Work">
+                <img src="assets/WORKS/P8EEP31.jpg" class="showcase-img" alt="Work">
+                <img src="assets/WORKS/PaperBag_180x220x80_Mockup_1.jpg" class="showcase-img" alt="Work">
+                <img src="assets/WORKS/Rounded-Business-Card-Mockup.jpg" class="showcase-img" alt="Work">
+                <img src="assets/WORKS/qr-code-restaurant-menu2.jpg" class="showcase-img" alt="Work">
+                <div class="showcase-overlay"></div>
+            </div>
+            <div class="container showcase-content">
+                <h2 class="showcase-title">
+                    <span class="static-text">I can</span>
+                    <br>
+                    <span class="dynamic-text">Create Content</span>
+                </h2>
+            </div>
+        </section>
+
+        <!-- Capabilities / Expertise Section (Sticky Stack) -->
+        <section id="expertise" class="capabilities-section">
+            <!-- Content Injected via JS -->
+        </section>
+
+        <!-- Selected Works (Interactive Gallery) -->
+        <section id="works" class="works-section">
+            <div class="works-gallery-container">
+                <div class="works-grid" id="worksGrid">
+                    <!-- Grid items injected via JS -->
+                </div>
+            </div>
+
+            <!-- Floating Button -->
+            <div class="gallery-btn-container">
+                <a href="#" class="view-gallery-btn">
+                    View More in Gallery <span class="arrow-icon">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="footer-section">
+            <div class="container">
+                <div class="footer-cta">
+                    <h2>Have a project?</h2>
+                    <a href="mailto:contact@farseen.com" class="btn-main">Let's Talk</a>
+                </div>
+                <div class="footer-bottom">
+                    <div class="socials">
+                        <a href="https://www.instagram.com/me_farseen/">Instagram</a>
+                        <a href="https://www.linkedin.com/in/farseen-p-t/">LinkedIn</a>
+                        <a href="https://www.behance.net/Farseencreator">Behance</a>
+                        <a href="https://x.com/farsee582">Twitter</a>
+                    </div>
+                    <div class="copyright">
+                        &copy; 2025 Farseen P T
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
