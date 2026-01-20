@@ -17,3 +17,6 @@
     - [x] Refactor HTML for full-screen grid
     - [x] Implement JS Fisheye/Magnification logic
     - [x] Add 'View More' animated button
+- [x] Refine Showcase Spacing & Speed <!-- id: 10 -->
+    - [x] Tighten text spacing (Aggressive negative margins)
+    - [x] Speed up text cycle (0.8s)

@@ -489,7 +489,8 @@ body.hovering .cursor-circle {
 /* 5. Showcase Section */
 /* 5. Showcase Section */
 .showcase-section {
-    height: 100vh;
+    height: 60vh;
+    /* Reduced from 100vh */
     position: relative;
     overflow: hidden;
     display: flex;
@@ -559,8 +560,8 @@ body.hovering .cursor-circle {
     font-size: 0.4em;
     letter-spacing: 0.1em;
     font-weight: 600;
-    margin-bottom: -15px;
-    /* Pull bottom closer */
+    margin-bottom: -55px;
+    /* Aggressive pull */
     opacity: 0.8;
 }
 
@@ -570,8 +571,8 @@ body.hovering .cursor-circle {
     font-style: italic;
     font-weight: 400;
     color: var(--accent-color);
-    margin-top: -15px;
-    /* Pull top closer */
+    margin-top: -55px;
+    /* Aggressive pull */
     min-height: 1.2em;
     font-size: 0.8em;
     text-transform: none;
@@ -580,16 +581,30 @@ body.hovering .cursor-circle {
 
 /* Mobile Adjustments */
 @media (max-width: 900px) {
+    .showcase-section {
+        min-height: 60vh;
+        /* Reduce height on mobile */
+        padding: 4rem 0;
+        /* Less padding */
+    }
+
     .showcase-title {
         font-size: 15vw;
     }
 
     .static-text {
         font-size: 0.3em;
+        margin-bottom: -25px;
+        /* Mobile adjustment */
+    }
+
+    .dynamic-text {
+        margin-top: -25px;
+        /* Mobile adjustment */
     }
 
     .showcase-img {
-        width: 200px;
+        width: 150px;
     }
 }
 
@@ -670,7 +685,7 @@ body.hovering .cursor-circle {
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     padding-bottom: 4px;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .text-link:hover {
